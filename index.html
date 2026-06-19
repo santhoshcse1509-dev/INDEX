@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEURAL_CORE | Evolution 2.0</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #050505;
+            color: #e0e0e0;
+            font-family: 'Rajdhani', sans-serif;
+            overflow-x: hidden;
+        }
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+        
+        .glitch-text {
+            text-shadow: 2px 0 #00f2ff, -2px 0 #ff00ff;
+            animation: glitch 3s infinite;
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: 2px 0 #00f2ff, -2px 0 #ff00ff; }
+            50% { text-shadow: -2px 0 #00f2ff, 2px 0 #ff00ff; }
+            100% { text-shadow: 2px 0 #00f2ff, -2px 0 #ff00ff; }
+        }
+
+        .glass-card {
+            background: rgba(20, 20, 20, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: #00f2ff;
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(0, 242, 255, 0.15) 0%, transparent 70%);
+        }
+
+        .scanline {
+            width: 100%;
+            height: 2px;
+            background: rgba(0, 242, 255, 0.3);
+            position: absolute;
+            animation: scan 4s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { top: 0; }
+            100% { top: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center bg-black/50 backdrop-blur-md border-b border-cyan-900/30">
+        <div class="text-2xl font-bold font-orbitron tracking-tighter text-cyan-400">
+            <span class="text-white">NEURAL</span>_CORE
+        </div>
+        <div class="hidden md:flex space-x-10 text-sm font-medium tracking-widest uppercase">
+            <a href="#" class="hover:text-cyan-400 transition">Augmentations</a>
+            <a href="#" class="hover:text-cyan-400 transition">System Status</a>
+            <a href="#" class="hover:text-cyan-400 transition">Interface</a>
+        </div>
+        <button class="border border-cyan-500 px-6 py-2 text-xs font-orbitron hover:bg-cyan-500 hover:text-black transition duration-300">
+            SYNC NOW
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center pt-20 overflow-hidden hero-gradient">
+        <div class="scanline"></div>
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-cyan-500 font-orbitron text-sm tracking-[0.5em] mb-4">ESTABLISHING CONNECTION...</h2>
+                <h1 class="text-6xl md:text-8xl font-bold font-orbitron mb-6 leading-tight">
+                    BEYOND <br> <span class="glitch-text text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">BIOLOGY</span>
+                </h1>
+                <p class="text-gray-400 text-lg max-w-md mb-8 leading-relaxed">
+                    Overclock your physical limits with the world's first neural-integrated prosthetic system. Seamlessly blend consciousness with carbon-fiber hardware.
+                </p>
+                <div class="flex space-x-4">
+                    <button class="bg-cyan-500 text-black px-8 py-4 font-orbitron font-bold hover:bg-white transition">INSTALL CORE</button>
+                    <button class="border border-white/20 px-8 py-4 font-orbitron font-bold hover:bg-white/10 transition">VIEW SPECS</button>
+                </div>
+            </div>
+            
+            <div class="relative" data-aos="zoom-in">
+                <!-- Placeholder for Cyborg Image/3D Model -->
+                <div class="w-full h-[500px] rounded-full border-2 border-cyan-500/20 flex items-center justify-center relative">
+                    <div class="absolute inset-0 bg-cyan-500/5 animate-pulse rounded-full"></div>
+                    <img src="https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&q=80&w=800" 
+                         alt="Cyborg Interface" 
+                         class="rounded-lg shadow-2xl grayscale hover:grayscale-0 transition duration-700 w-4/5">
+                    <!-- HUD Elements -->
+                    <div class="absolute top-0 right-0 p-4 border border-cyan-500/50 bg-black/80 font-mono text-[10px] text-cyan-400">
+                        LATENCY: 0.002ms<br>SYNC: 99.9%<br>STATUS: OPTIMAL
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-20 bg-black border-y border-white/5">
+        <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div data-aos="fade-up">
+                <div class="text-4xl font-orbitron text-cyan-400 mb-2">12.8 TFLOPS</div>
+                <div class="text-xs uppercase tracking-widest text-gray-500">Processing Power</div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="100">
+                <div class="text-4xl font-orbitron text-cyan-400 mb-2">0.2ms</div>
+                <div class="text-xs uppercase tracking-widest text-gray-500">Neural Response</div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <div class="text-4xl font-orbitron text-cyan-400 mb-2">100%</div>
+                <div class="text-xs uppercase tracking-widest text-gray-500">Titanium Grade</div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="300">
+                <div class="text-4xl font-orbitron text-cyan-400 mb-2">∞</div>
+                <div class="text-xs uppercase tracking-widest text-gray-500">Potential</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-24 container mx-auto px-6">
+        <div class="text-center mb-20">
+            <h2 class="font-orbitron text-3xl mb-4">SYSTEM ENHANCEMENTS</h2>
+            <div class="h-1 w-20 bg-cyan-500 mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="glass-card p-10 relative overflow-hidden group" data-aos="fade-up">
+                <div class="w-12 h-12 mb-6 border border-cyan-500 flex items-center justify-center text-cyan-500 group-hover:bg-cyan-500 group-hover:text-black transition">
+                    01
+                </div>
+                <h3 class="font-orbitron text-xl mb-4">Neural Link v4</h3>
+                <p class="text-gray-400">Direct brain-to-machine interface with encrypted synaptic feedback loop.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="glass-card p-10 relative overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-12 h-12 mb-6 border border-cyan-500 flex items-center justify-center text-cyan-500 group-hover:bg-cyan-500 group-hover:text-black transition">
+                    02
+                </div>
+                <h3 class="font-orbitron text-xl mb-4">Ocular HUD</h3>
+                <p class="text-gray-400">Real-time data visualization and thermal imaging directly onto the retina.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="glass-card p-10 relative overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-12 h-12 mb-6 border border-cyan-500 flex items-center justify-center text-cyan-500 group-hover:bg-cyan-500 group-hover:text-black transition">
+                    03
+                </div>
+                <h3 class="font-orbitron text-xl mb-4">Kinetic Core</h3>
+                <p class="text-gray-400">Hyper-efficient motor servos providing 10x human strength and stamina.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/10 text-center">
+        <div class="font-orbitron text-cyan-900 mb-4 tracking-[1em]">SYSTEM_OFFLINE</div>
+        <p class="text-gray-600 text-sm">© 2077 NEURAL_CORE TECHNOLOGIES. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-in-out'
+        });
+    </script>
+</body>
+</html>
