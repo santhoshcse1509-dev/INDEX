@@ -6,6 +6,7 @@ pipeline {
     }
 
     stages {
+
         stage('Check Versions') {
             steps {
                 sh 'node --version'
@@ -13,9 +14,9 @@ pipeline {
             }
         }
 
-        stage('Install Vercel CLI') {
+        stage('Check Vercel') {
             steps {
-                sh 'npm install -g vercel'
+                sh 'npx vercel --version'
             }
         }
 
@@ -24,7 +25,9 @@ pipeline {
                 withCredentials([
                     string(credentialsId: 'vercel-token', variable: 'VERCEL_TOKEN')
                 ]) {
-                    sh 'vercel --token=$VERCEL_TOKEN --yes'
+                    sh '''
+                    npx vercel --token=$VERCEL_TOKEN --yes
+                    '''
                 }
             }
         }
