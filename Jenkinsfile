@@ -23,7 +23,7 @@ stages {
     stage('Deploy to Vercel') {
         steps {
             withCredentials([
-                string(credentialsId: 'vercel-token', variable: 'VERCEL_TOKEN')
+                string(credentialsId: 'vercel-token', variable: 'vcp_8fWSRXhBUpU0fcZO1CTYmzGqyEkLKiNtxWDWdSHNNi06m4G4i91BB8Qh')
             ]) {
                 sh '''
                 vercel --token=$VERCEL_TOKEN --yes
