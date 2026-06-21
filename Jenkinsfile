@@ -1,9 +1,3 @@
-
-or has stray backticks near line 4.
-
-### Replace the entire Jenkinsfile with this exact content:
-
-```groovy
 pipeline {
     agent any
 
