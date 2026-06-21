@@ -1,37 +1,38 @@
+
+or has stray backticks near line 4.
+
+### Replace the entire Jenkinsfile with this exact content:
+
+```groovy
 pipeline {
-agent any
+    agent any
 
-```
-tools {
-    nodejs 'NodeJS-22'
-}
-
-stages {
-    stage('Check Versions') {
-        steps {
-            sh 'node --version'
-            sh 'npm --version'
-        }
+    tools {
+        nodejs 'NodeJS-22'
     }
 
-    stage('Install Vercel CLI') {
-        steps {
-            sh 'npm install -g vercel'
+    stages {
+        stage('Check Versions') {
+            steps {
+                sh 'node --version'
+                sh 'npm --version'
+            }
         }
-    }
 
-    stage('Deploy to Vercel') {
-        steps {
-            withCredentials([
-                string(credentialsId: 'vercel-token', variable: 'vcp_8fWSRXhBUpU0fcZO1CTYmzGqyEkLKiNtxWDWdSHNNi06m4G4i91BB8Qh')
-            ]) {
-                sh '''
-                vercel --token=$VERCEL_TOKEN --yes
-                '''
+        stage('Install Vercel CLI') {
+            steps {
+                sh 'npm install -g vercel'
+            }
+        }
+
+        stage('Deploy to Vercel') {
+            steps {
+                withCredentials([
+                    string(credentialsId: 'vercel-token', variable: 'VERCEL_TOKEN')
+                ]) {
+                    sh 'vercel --token=$VERCEL_TOKEN --yes'
+                }
             }
         }
     }
-}
-```
-
 }
