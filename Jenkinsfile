@@ -6,7 +6,6 @@ pipeline {
     }
 
     stages {
-
         stage('Check Versions') {
             steps {
                 sh 'node --version'
@@ -14,21 +13,15 @@ pipeline {
             }
         }
 
-        stage('Check Vercel') {
+        stage('Verify Files') {
             steps {
-                sh 'npx vercel --version'
+                sh 'ls -la'
             }
         }
 
-        stage('Deploy to Vercel') {
+        stage('Success') {
             steps {
-                withCredentials([
-                    string(credentialsId: 'vercel-token', variable: 'VERCEL_TOKEN')
-                ]) {
-                    sh '''
-                    npx vercel --token=$VERCEL_TOKEN --yes
-                    '''
-                }
+                echo 'Build completed successfully'
             }
         }
     }
